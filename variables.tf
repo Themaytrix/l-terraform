@@ -8,7 +8,7 @@ variable "image_id" {
 }
 
 variable "instance_type" {
-  type = string
+  type    = string
   default = "t2.micro"
 }
 
@@ -19,7 +19,7 @@ variable "subnet_id" {
 
 variable "vpc_security_group_ids" {
   type    = list(string)
-  default = ["sg-0f80038d4154d8768","blah"]
+  default = ["sg-0f80038d4154d8768", "blah"]
 }
 
 

@@ -1,8 +1,8 @@
 # create IAM role - assigning the role amozon ec2 trust capabilties to access tokens and secret ids
 resource "aws_iam_role" "ec2_role" {
   name = "achia_role"
-  
-    # setring up json policy
+
+  # setring up json policy
   assume_role_policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
@@ -23,21 +23,21 @@ resource "aws_iam_policy" "s3_access_policy" {
   name = "achia_s3_access_policy"
 
   policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
+    "Version" : "2012-10-17",
+    "Statement" : [
       {
-        "Effect": "Allow",
-        "Action": [
+        "Effect" : "Allow",
+        "Action" : [
           "s3:ListBucket"
         ],
-        "Resource": "arn:aws:s3:::achia-bucket"
+        "Resource" : "arn:aws:s3:::achia-bucket"
       },
       {
-        "Effect": "Allow",
-        "Action": [
+        "Effect" : "Allow",
+        "Action" : [
           "s3:GetObject"
         ],
-        "Resource": "arn:aws:s3:::achia-bucket/*"
+        "Resource" : "arn:aws:s3:::achia-bucket/*"
       }
     ]
   })
